@@ -18,12 +18,13 @@ $chat_id = $message['chat']['id'];
 $firstName = $message['from']['first_name'];
 $lastName = $message['from']['last_name'];
 
+// order buttons texts
 $orderTypes = ["1kg - 50 000 so'm", "1.5kg (1L) - 75 000 so'm", "4.5kg (3L) - 220 000 so'm", "7.5kg (5L) - 370 000 so'm"];
 
 if ($text == "/start") {
     showMain();
 } else {
-    switch (getPage($chat_id)) {
+    switch (getPage($chat_id)) { // check current page
         case 'main':
             if ($text == "🍯 Batafsil ma'lumot") {
                 showAbout();
